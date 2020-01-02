@@ -65,6 +65,11 @@ defmodule Logglix do
     {:ok, config}
   end
 
+  @doc false
+  def handle_event(_, config) do
+    {:ok, config}
+  end
+
   defp meet_level?(_lvl, nil), do: true
   defp meet_level?(lvl, min) do
    Logger.compare_levels(lvl, min) != :lt
